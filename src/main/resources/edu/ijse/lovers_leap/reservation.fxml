@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="536.0" prefWidth="1207.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.lovers_leap.fxmlController.ReservationControllerFxml">
+    <children>
+        <AnchorPane prefHeight="54.0" prefWidth="1207.0" style="-fx-background-color: #7CC8F5;">
+            <children>
+                <ImageView fitHeight="34.0" fitWidth="40.0" layoutX="501.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@images/reservation.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="551.0" layoutY="16.0" text="Reservation">
+                    <font>
+                        <Font name="Arial Rounded MT Bold" size="18.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <TableView fx:id="tblCustomerStatus" layoutX="958.0" layoutY="84.0" onMouseClicked="#tblCustomerStatusMouseClicked" prefHeight="435.0" prefWidth="235.0">
+            <columns>
+                <TableColumn fx:id="colCustomerIdCS" prefWidth="47.3333740234375" text="Cust ID" />
+                <TableColumn fx:id="colNameCS" prefWidth="103.33331298828125" text="Name" />
+                <TableColumn fx:id="colContatcNoCS" prefWidth="83.3333740234375" text="Contact No" />
+            </columns>
+        </TableView>
+        <TableView fx:id="tblRoomStatus" layoutX="633.0" layoutY="84.0" onMouseClicked="#tblRoomStatusMouseClicked" prefHeight="435.0" prefWidth="320.0">
+            <columns>
+                <TableColumn fx:id="colRoomIdRS" prefWidth="61.33331298828125" text="Room ID" />
+                <TableColumn fx:id="colCategoryRS" prefWidth="76.6666259765625" text="Category" />
+                <TableColumn fx:id="colStatusRS" prefWidth="122.66668701171875" text="Status" />
+            <TableColumn fx:id="colBedsRS" prefWidth="55.99993896484375" text="Beds" />
+            </columns>
+        </TableView>
+      <Label layoutX="714.0" layoutY="57.0" text="Room Status">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="1001.0" layoutY="57.0" text="Customer Status">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblReservation" layoutX="14.0" layoutY="317.0" onMouseClicked="#tblReservationMouseClicked" prefHeight="200.0" prefWidth="615.0">
+        <columns>
+          <TableColumn fx:id="colResId" prefWidth="45.99996852874756" text="Res_ ID" />
+          <TableColumn fx:id="colCusId" prefWidth="51.33334732055664" text="Cus_ ID" />
+            <TableColumn fx:id="colInDate" prefWidth="66.66667938232422" text="In Date" />
+            <TableColumn fx:id="colOutDate" prefWidth="73.33328247070312" text="Out Date" />
+            <TableColumn fx:id="colBookingStatus" prefWidth="97.99995422363281" text="Booking_ Status" />
+            <TableColumn fx:id="colRoomNo" prefWidth="60.0" text="Room No" />
+            <TableColumn fx:id="colGuests" prefWidth="54.66668701171875" text="Guests" />
+            <TableColumn fx:id="colBookedDate" prefWidth="77.99996948242188" text="Booked Date" />
+            <TableColumn fx:id="colBookedTime" prefWidth="85.0" text="Booked Time" />
+        </columns>
+      </TableView>
+      <Label layoutX="14.0" layoutY="64.0" text="Make your reservation....">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtCusId" editable="false" layoutX="23.0" layoutY="96.0" onAction="#txtCustomerIdAction" onKeyPressed="#txtCustomerIdKeyPress" onKeyTyped="#txtCustomerIdKeyTyped" prefHeight="25.0" prefWidth="165.0" promptText="Select Customer From Table">
+         <tooltip>
+            <Tooltip text="Please Select your Registerd Customer From the Table" />
+         </tooltip>
+      </TextField>
+      <TextField fx:id="txtRoomId" editable="false" layoutX="23.0" layoutY="128.0" onKeyPressed="#txtRoomNoKeyPress" prefHeight="25.0" prefWidth="165.0" promptText="Select Room From Table">
+         <tooltip>
+            <Tooltip text="Please Select your Prefered Room from the Table" />
+         </tooltip>
+      </TextField>
+      <DatePicker fx:id="dateIN" layoutX="23.0" layoutY="162.0" onKeyPressed="#dateINKeyPress" prefHeight="25.0" prefWidth="165.0" promptText="Check In Date" />
+      <DatePicker fx:id="dateOut" layoutX="23.0" layoutY="197.0" onKeyPressed="#dateOutKeyPress" prefHeight="25.0" prefWidth="165.0" promptText="Check Out Date" />
+      <ComboBox fx:id="cmbBookingStatus" layoutX="23.0" layoutY="236.0" onKeyPressed="#cmbBookingStatusKeyPress" prefHeight="25.0" prefWidth="165.0" promptText="Booking Status" />
+      <TextField fx:id="txtGuests" layoutX="23.0" layoutY="271.0" onKeyPressed="#txtGuestsKeyPress" prefHeight="25.0" prefWidth="165.0" promptText="No of Guests" />
+      <Button id="btna" fx:id="btnAdd" layoutX="207.0" layoutY="271.0" mnemonicParsing="false" onAction="#btnAddAction" prefHeight="25.0" prefWidth="78.0" stylesheets="@Style.css" text="Add" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button id="btna" fx:id="btnUpdate" layoutX="207.0" layoutY="235.0" mnemonicParsing="false" onAction="#btnUpdateAction" prefHeight="25.0" prefWidth="78.0" stylesheets="@Style.css" text="Update" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button id="btna" fx:id="btnCancell" layoutX="506.0" layoutY="270.0" mnemonicParsing="false" onAction="#btnCancellAction" prefHeight="27.0" prefWidth="115.0" stylesheets="@Style.css" text="Cancel Booking" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+         <tooltip>
+            <Tooltip text="After 24h You can not Cancell the Booking." />
+         </tooltip>
+      </Button>
+      <Button id="btna" fx:id="btnDelete" layoutX="207.0" layoutY="196.0" mnemonicParsing="false" onAction="#btnDeleteAction" prefHeight="25.0" prefWidth="78.0" stylesheets="@Style.css" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Label fx:id="lblCustomerName" layoutX="207.0" layoutY="100.0" prefHeight="19.0" prefWidth="126.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblCustomerNic" layoutX="352.0" layoutY="100.0" prefHeight="19.0" prefWidth="174.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblRoomCategory" layoutX="207.0" layoutY="131.0" prefHeight="19.0" prefWidth="126.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblRoomCost" layoutX="352.0" layoutY="131.0" prefHeight="19.0" prefWidth="174.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>

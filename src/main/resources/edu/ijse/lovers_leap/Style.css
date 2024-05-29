@@ -1,0 +1,28 @@
+#btna {
+    -fx-background-color: #1D59A0;
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.6) , 5,0,2,2 );
+}
+
+
+
+#btna:hover {
+    -fx-background-color: #2980b9;
+}
+
+#btnp{
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.6) , 5,0,2,2 );
+    -fx-background-color: #550A35;
+}
+
+#btnp:hover{
+    -fx-background-color: #7D0552;
+}
+
+#btnLogout{
+    -fx-background-image: url("images/logout.png");
+    -fx-background-size: 38px 38px;
+}
+
+/*#btnLogout{*/
+/*    -fx-background-color: #2980b9;*/
+/*}*/

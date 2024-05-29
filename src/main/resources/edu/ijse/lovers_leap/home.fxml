@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="640.0" prefWidth="1010.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.lovers_leap.fxmlController.HomeFxmlController">
+    <children>
+        <AnchorPane layoutX="-4.0" layoutY="175.0" prefHeight="465.0" prefWidth="212.0" style="-fx-background-color: #112251;">
+            <children>
+                <Line endX="66.86666870117188" layoutX="118.0" layoutY="216.0" startX="-100.0" stroke="WHITE" />
+                <Button fx:id="btnReceiptionist" layoutX="23.0" layoutY="423.0" mnemonicParsing="false" onAction="#btnReceiptionistAction" prefHeight="26.0" prefWidth="158.0" text="Receptionist">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+                <Button fx:id="btnRoomCategories" layoutX="23.0" layoutY="385.0" mnemonicParsing="false" onAction="#btnRoomCategoryAction" prefHeight="26.0" prefWidth="158.0" text="Room Category">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+                <Button fx:id="btnAvailabeRooms" layoutX="23.0" layoutY="309.0" mnemonicParsing="false" onAction="#btnRoomManagementAction" prefHeight="26.0" prefWidth="158.0" text="Room Management">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+                <Button fx:id="btnHotelDetails" layoutX="23.0" layoutY="347.0" mnemonicParsing="false" onAction="#btnHotelDetailAction" prefHeight="26.0" prefWidth="158.0" text="Hotel Details">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+                <ImageView fitHeight="55.0" fitWidth="94.0" layoutX="75.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@images/team.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="52.0" layoutY="76.0" text="Welcome," textFill="WHITE">
+                    <font>
+                        <Font name="Arial Bold" size="23.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lblShowReceiptionistName" alignment="CENTER" contentDisplay="CENTER" layoutX="27.0" layoutY="103.0" prefHeight="27.0" prefWidth="158.0" text="Label" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font></Label>
+                <Button fx:id="btnReservation" layoutX="23.0" layoutY="224.0" mnemonicParsing="false" onAction="#btnReservationAction" prefHeight="46.0" prefWidth="158.0" text="Reservation">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
+        <ImageView fitHeight="75.0" fitWidth="108.0" layoutX="65.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@images/hotel_icon.png" />
+            </image>
+        </ImageView>
+        <Label layoutX="25.0" layoutY="91.0" prefHeight="44.0" prefWidth="168.0" text="Lovers Leap">
+            <font>
+                <Font name="Eras Bold ITC" size="27.0" />
+            </font>
+        </Label>
+        <AnchorPane layoutX="208.0" prefHeight="571.0" prefWidth="797.0" style="-fx-background-color: #D0C7C7;">
+            <children>
+                <TableView fx:id="tblShowCustomers" layoutX="3.0" layoutY="7.0" onMouseClicked="#tblShowCustomerMouseClicked" prefHeight="293.0" prefWidth="789.0">
+                    <columns>
+                        <TableColumn fx:id="ColCustomerId" prefWidth="85.33329772949219" text="Customer ID" />
+                        <TableColumn fx:id="ColFirstName" prefWidth="114.00003051757812" text="First Name" />
+                        <TableColumn fx:id="ColContatcNo" prefWidth="97.33328247070312" text="Contatc No" />
+                        <TableColumn fx:id="ColAddress" prefWidth="149.99996948242188" text="Address" />
+                        <TableColumn fx:id="ColGender" prefWidth="63.33331298828125" text="Gender" />
+                        <TableColumn fx:id="ColEmail" minWidth="7.20001220703125" prefWidth="122.66668701171875" text="Email" />
+                        <TableColumn fx:id="ColNicNo" prefWidth="150.0" text="NIC Number" />
+
+                    </columns>
+                </TableView>
+                <Line endX="643.3333129882812" layoutX="152.0" layoutY="310.0" startX="-105.00001525878906" stroke="WHITE" />
+                <Label layoutX="48.0" layoutY="433.0" text="New Customer Registration">
+                    <font>
+                        <Font name="System Bold" size="17.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="txtCustomerFirstName" layoutX="38.0" layoutY="475.0" onKeyPressed="#txtCustomerFirstnameKeypressAction" prefHeight="26.0" prefWidth="184.0" promptText="Customer First Name">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font></TextField>
+                <TextField fx:id="txtCustomerAddress" layoutX="238.0" layoutY="475.0" onKeyPressed="#txtCustomerAddressKeypressAction" prefHeight="26.0" prefWidth="184.0" promptText="Customer Address">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font></TextField>
+                <ComboBox fx:id="cmbCountry" layoutX="238.0" layoutY="524.0" onKeyPressed="#cmbCustomerCountryKeyPressAction" prefHeight="26.0" prefWidth="184.0" promptText="Customer Country" />
+                <ComboBox fx:id="cmbGender" layoutX="438.0" layoutY="475.0" onKeyPressed="#cmbGenderKeyPressAction" prefHeight="26.0" prefWidth="168.0" promptText="Gender" />
+                <TextField fx:id="txtCustomerLastName" layoutX="38.0" layoutY="524.0" onKeyPressed="#txtCustomerLastNameKeypressAction" prefHeight="26.0" prefWidth="184.0" promptText="Customer Last Name">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font></TextField>
+                <TextField fx:id="txtEmail" layoutX="438.0" layoutY="524.0" onKeyPressed="#txtEmailKeypressAction" prefHeight="26.0" prefWidth="168.0" promptText="Email">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font></TextField>
+                <TextField fx:id="txtContatcNo" layoutX="628.0" layoutY="475.0" onKeyPressed="#txtContactNoKeypressAction" prefHeight="26.0" prefWidth="158.0" promptText="Contatc No">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font></TextField>
+                <TextField fx:id="txtNICnumber" layoutX="628.0" layoutY="524.0" onKeyPressed="#txtNicKeypressAction" prefHeight="26.0" prefWidth="158.0" promptText="NIC Number">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font></TextField>
+                <ImageView fitHeight="44.0" fitWidth="40.0" layoutX="8.0" layoutY="426.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@images/customer.png" />
+                    </image>
+                </ImageView>
+                <Line endX="635.3333129882812" endY="6.103515625E-5" layoutX="162.0" layoutY="432.0" startX="-112.20002746582031" startY="6.103515625E-5" stroke="WHITE" />
+                <Label layoutX="45.0" layoutY="310.0" text="Search Customer">
+                    <font>
+                        <Font name="System Bold" size="17.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="27.0" fitWidth="28.0" layoutX="12.0" layoutY="310.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@images/search.png" />
+                    </image>
+                </ImageView>
+                <TextField fx:id="txtEnterNICnumber" layoutX="75.0" layoutY="346.0" onKeyPressed="#txtEnterNicNumberKeypressAction" prefHeight="26.0" prefWidth="204.0" promptText="Enter Nic Number">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font></TextField>
+                <Button id="btna" fx:id="btnSearcCustomer" layoutX="75.0" layoutY="380.0" mnemonicParsing="false" onAction="#searchCustomerAction" prefHeight="26.0" prefWidth="204.0" stylesheets="@Style.css" text="Search Customer" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Button>
+                <Label fx:id="lblShowSeacrheCustomerId" layoutX="308.0" layoutY="362.0">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font></Label>
+                <Label fx:id="lblShowFirstName" layoutX="366.0" layoutY="362.0">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font></Label>
+                <Label fx:id="lblShowContactNo" layoutX="466.0" layoutY="362.0">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font></Label>
+                <Label fx:id="lblShowEmail" layoutX="578.0" layoutY="362.0">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font></Label>
+                <Label fx:id="lblShowCustomerID" layoutX="328.0" layoutY="503.0" text="1020" visible="false">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Label>
+                <Line endX="-100.0" endY="35.199981689453125" layoutX="459.0" layoutY="341.0" startX="-100.0" />
+                <Line endX="-100.0" endY="35.199981689453125" layoutX="555.0" layoutY="341.0" startX="-100.0" />
+                <Line endX="-100.0" endY="35.199981689453125" layoutX="663.0" layoutY="341.0" startX="-100.0" />
+                <Label layoutX="308.0" layoutY="323.0" text="ID" textFill="#969191" />
+                <Label layoutX="368.0" layoutY="323.0" text="Name" textFill="#969191" />
+                <Label layoutX="466.0" layoutY="323.0" text="Contatc No" textFill="#969191" />
+                <Label layoutX="578.0" layoutY="323.0" text="Email" textFill="#969191" />
+            </children>
+        </AnchorPane>
+        <Button id="btna" fx:id="btnAddCustomer" layoutX="237.0" layoutY="583.0" mnemonicParsing="false" onAction="#addCustomerAction" prefHeight="31.0" prefWidth="150.0" stylesheets="@Style.css" text="Add Customer" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Button>
+        <Button id="btna" fx:id="btnUpdateCustomer" layoutX="415.0" layoutY="583.0" mnemonicParsing="false" onAction="#updateAction" prefHeight="31.0" prefWidth="150.0" stylesheets="@Style.css" text="Update Customer" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Button>
+        <Button id="btnp" fx:id="btnPayment" layoutX="848.0" layoutY="583.0" mnemonicParsing="false" onAction="#btnPaymentAction" prefHeight="26.0" prefWidth="134.0" stylesheets="@Style.css" text="Payment" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Button>
+        <Button id="btna" fx:id="btnDeleteCustomer" layoutX="590.0" layoutY="583.0" mnemonicParsing="false" onAction="#deleteAction" prefHeight="31.0" prefWidth="150.0" stylesheets="@Style.css" text="Delete Customer" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Button>
+      <Label fx:id="lblShowRealTime" alignment="CENTER" layoutX="25.0" layoutY="141.0" prefHeight="17.0" prefWidth="168.0">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>

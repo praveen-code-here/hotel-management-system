@@ -1,0 +1,104 @@
+CREATE TABLE HotelBranchDetail(
+Hotel_ID int AUTO_INCREMENT,
+NAME VARCHAR(30) not null UNIQUE,
+ADDRESS VARCHAR(40),
+District VARCHAR(20) not null,
+Contact_No VARCHAR (15) NOT NULL,
+CONSTRAINT PRIMARY KEY (Hotel_ID));
+
+INSERT INTO HotelBranchDetail VALUES(1,'Lovers Leap','Galle road,Hikkaduwa down south','Galle','0774856142');
+INSERT INTO HotelBranchDetail VALUES('2','Grand Royal','Badulla road,Ella','Badulla','0712435698');
+------------------------------------------------------------------------------------------------------------------------
+
+CREATE TABLE Receptionists(
+Rep_Id int AUTO_INCREMENT,
+First_Name VARCHAR(15) NOT NULL,
+Last_Name VARCHAR(15) NOT NULL,
+position VARCHAR(20),
+Hotel_ID int not null,
+password varchar(15) not null,
+age int,
+contact_no varchar(15) not null UNIQUE,
+CONSTRAINT PRIMARY KEY (Rep_Id),
+CONSTRAINT FOREIGN KEY(Hotel_ID) REFERENCES HotelBranchDetail (Hotel_ID))AUTO_INCREMENT = 1000;
+
+INSERT INTO Receptionists VALUES(100500,'Admin','Admin','Senior Receptionists',1,'123',30,'0774872919');
+------------------------------------------------------------------------------------------------------------------------
+
+CREATE TABLE Customer(
+Cus_Id int AUTO_INCREMENT,
+First_Name VARCHAR(30) NOT NULL,
+Last_Name VARCHAR(30) NOT NULL,
+Address VARCHAR(50),
+Country VARCHAR(20),
+Gender varchar(10) not null,
+Email VArchar(50),
+contact_no varchar(15) not null,
+NIC_no varchar(15) not null UNIQUE,
+CONSTRAINT PRIMARY KEY (Cus_Id));
+
+INSERT INTO Customer VALUES(1000,'Nuwan','Amila','41/A Padukka','Sri Lanka','male','Nuwan@gmail.com','0774872919','199416000530');
+--------------------------------------------------------------------------------------------------------------------------
+CREATE TABLE Room_Category(
+CatID int AUTO_INCREMENT,
+Room_Type_Name VARCHAR(15) NOT NULL UNIQUE,
+Cost_Per_Night double not null,
+Discription VARCHAR(200),
+CONSTRAINT PRIMARY KEY (CatID));
+
+INSERT INTO Room_Category VALUES(1,'VIP',9500,'Designed for Vip customers');
+-------------------------------------------------------------------------------------------------------------------------------------
+CREATE TABLE Room(
+Room_Id varchar(10) NOT NULL UNIQUE,
+Cat_ID int NOT NULL,
+Hotel_ID int Not Null,
+No_of_Beds int not null,
+Status varchar(20) not Null,
+CONSTRAINT PRIMARY KEY (Room_Id),
+CONSTRAINT FOREIGN KEY(Cat_ID) REFERENCES Room_Category (CatID),
+CONSTRAINT FOREIGN KEY(Hotel_ID) REFERENCES HotelBranchDetail (Hotel_ID));
+
+INSERT INTO Room VALUES('R04',1,2,3,'Available');
+-------------------------------------------------------------------------------------------------------------------------------------
+CREATE TABLE Reservation(
+Res_Id int AUTO_INCREMENT,
+Cus_ID int NOT NULL,
+In_Date date Not Null,
+out_Date date Not null,
+Booking_Status varchar(20) Not Null,
+Room_no Varchar(15) not Null,
+Guest int Not Null,
+BookedDate date not null,
+BookedTime time not null,
+CONSTRAINT PRIMARY KEY (Res_Id),
+CONSTRAINT FOREIGN KEY(Cus_ID) REFERENCES Customer (Cus_Id),
+CONSTRAINT FOREIGN KEY(Room_no) REFERENCES Room (Room_Id));
+--------------------------------------------------------------------------------------------------------------------------------------
+CREATE TABLE Payment_Summary(
+Pay_Id int AUTO_INCREMENT,
+Total_Amount Double NOT NULL,
+Cus_Name Varchar(20) Not Null,
+Payment_Method varchar(20) Not null,
+payment_Date Date Not Null,
+Payment_Time Time Not Null,
+CONSTRAINT PRIMARY KEY (Pay_Id));
+
+------------------------------------------------------------------------------------------------------------------------------------
+CREATE TABLE Payment_Details(
+Pay_Id int,
+Res_ID int NOT NULL,
+amount double Not Null,
+CONSTRAINT FOREIGN KEY(Res_ID) REFERENCES Reservation (Res_Id));
+--------------------------------------------------------------------------------------------------------------------------------------
+
+SELECT MAX(Res_Id) AS Last_Pay_Id FROM Reservation;
+-----------------------------------------------------------------------------------------------------------------------------------
+CREATE TABLE login_Details(
+Login_Detail_Id int AUTO_INCREMENT,
+login_time Time not null,
+login_Date Date Not Null,
+user_id int not null,
+CONSTRAINT PRIMARY KEY (Login_Detail_Id));
+
+SELECT Login_Detail_Id, login_time, login_Date, user_id FROM Login_Details having Login_Detail_Id=(SELECT MAX(Login_Detail_Id) AS Last_Pay_Id FROM Login_Details)
+-----------------------------------------------------------------------------------------------------------------------------------

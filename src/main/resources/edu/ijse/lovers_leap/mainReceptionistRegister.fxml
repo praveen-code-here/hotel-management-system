@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<!--<AnchorPane xmlns="http://javafx.com/javafx"-->
+<!--            xmlns:fx="http://javafx.com/fxml"-->
+<!--            fx:controller="edu.ijse.layered.loversleap_hotel.viewfxml.MainReceptionistRegisterControllerFxml"-->
+<!--            prefHeight="400.0" prefWidth="600.0">-->
+<!--</AnchorPane>-->
+
+<AnchorPane prefHeight="531.0" prefWidth="1117.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.lovers_leap.fxmlController.MainReceptionistRegisterControllerFxml">
+    <children>
+        <Button id="btna" fx:id="btnAdd" layoutX="519.0" layoutY="463.0" mnemonicParsing="false" onAction="#btnAddReceiptionistAction" prefHeight="40.0" prefWidth="182.0" stylesheets="@Style.css" text="Add" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Button>
+        <AnchorPane prefHeight="54.0" prefWidth="1117.0" style="-fx-background-color: #7CC8F5;">
+            <children>
+                <ImageView fitHeight="48.0" fitWidth="69.0" layoutX="373.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@images/register_Icon.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="440.0" layoutY="13.0" text="Receptionist Registrations">
+                    <font>
+                        <Font name="Arial Rounded MT Bold" size="18.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <Label layoutX="29.0" layoutY="105.0" text="First Name">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="29.0" layoutY="139.0" text="Last Name">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="30.0" layoutY="247.0" text="Position">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="29.0" layoutY="282.0" text="Hotel ID">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="29.0" layoutY="317.0" text="Password">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtFirstName" layoutX="142.0" layoutY="103.0" onKeyPressed="#txtFirstNameKeyPress" prefHeight="26.0" prefWidth="302.0" promptText="Enter First Name" />
+        <TextField fx:id="txtLastName" layoutX="142.0" layoutY="136.0" onKeyPressed="#txtLastNameKeyPress" prefHeight="26.0" prefWidth="302.0" promptText="Enter Last Name" />
+        <ComboBox fx:id="cmbPosition" layoutX="143.0" layoutY="245.0" onKeyPressed="#cmbPositionKeyPress" prefHeight="26.0" prefWidth="302.0" promptText="Select Position" visibleRowCount="2" />
+        <ComboBox fx:id="cmbHotelId" layoutX="143.0" layoutY="279.0" onKeyPressed="#cmbHotelIDKeyPress" prefHeight="26.0" prefWidth="302.0" promptText="Select Hotel ID" />
+        <Label layoutX="30.0" layoutY="175.0" text="Age">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="30.0" layoutY="208.0" text="Contact No">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtAge" layoutX="143.0" layoutY="172.0" onKeyPressed="#txtAgeKeyPress" prefHeight="26.0" prefWidth="302.0" promptText="Enter Age" />
+        <TextField fx:id="txtContatcNo" layoutX="143.0" layoutY="205.0" onKeyPressed="#txtContactNoKeyPress" prefHeight="26.0" prefWidth="302.0" promptText="Enter Contact No" />
+        <PasswordField fx:id="txtPassword" layoutX="143.0" layoutY="314.0" onKeyPressed="#txtPasswordKeyPress" prefHeight="26.0" prefWidth="302.0" promptText="Enter Password" />
+        <Button id="btna" fx:id="btnUpdate" layoutX="717.0" layoutY="463.0" mnemonicParsing="false" onAction="#btnUpdateAction" prefHeight="40.0" prefWidth="182.0" stylesheets="@Style.css" text="Update" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Button>
+        <Button id="btna" fx:id="btnDelete" layoutX="913.0" layoutY="463.0" mnemonicParsing="false" onAction="#btnDeleteAction" prefHeight="40.0" prefWidth="182.0" stylesheets="@Style.css" text="Delete" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Button>
+        <TableView fx:id="tblShowReceiptionist" layoutX="519.0" layoutY="97.0" onMouseClicked="#tblShowReceiptionistMouseClick" prefHeight="316.0" prefWidth="592.0">
+            <columns>
+                <TableColumn fx:id="colID" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="colName" prefWidth="75.0" text="Name" />
+                <TableColumn fx:id="colAge" prefWidth="64.800048828125" text="Age" />
+                <TableColumn fx:id="colContatcNo" prefWidth="116.79998779296875" text="Contact No" />
+                <TableColumn fx:id="colPosition" prefWidth="159.20001220703125" text="Position" />
+                <TableColumn fx:id="colHotelId" prefWidth="92.0" text="Hotel ID" />
+
+            </columns>
+        </TableView>
+        <Line endX="319.4000244140625" layoutX="175.0" layoutY="398.0" startX="-156.3333282470703" stroke="#c1c1c1" />
+        <Line endX="319.4000244140625" layoutX="175.0" layoutY="517.0" startX="-156.3333282470703" stroke="#b4b4b4" />
+        <TextField fx:id="txtEnterContatcNo" layoutX="18.0" layoutY="414.0" onKeyPressed="#txtEnterContactNoKeyPress" promptText="Enter Contact No">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </TextField>
+        <Button id="btna" fx:id="btnSearchReceiptionist" layoutX="187.0" layoutY="413.0" mnemonicParsing="false" onAction="#btnSearchReceptionistAction" prefHeight="27.0" prefWidth="159.0" stylesheets="@Style.css" text="Search Receiptionist" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Button>
+        <Label layoutX="30.0" layoutY="454.0" text="ID" textFill="#b4adad" />
+        <Label layoutX="82.0" layoutY="454.0" text="Name" textFill="#b4adad" />
+        <Label layoutX="179.0" layoutY="452.0" text="Age" textFill="#b4adad" />
+        <Label layoutX="253.0" layoutY="452.0" text="Contact No" textFill="#b4adad" />
+        <Label layoutX="364.0" layoutY="452.0" text="Hotel ID" textFill="#b4adad" />
+        <Line endX="-49.50712203979492" endY="36.0" layoutX="125.0" layoutY="463.0" startX="-49.50712203979492" startY="-5.60003662109375" />
+        <Line endX="-49.50712203979492" endY="36.0" layoutX="223.0" layoutY="461.0" startX="-49.50712203979492" startY="-5.60003662109375" />
+        <Line endX="-49.50712203979492" endY="36.0" layoutX="297.0" layoutY="462.0" startX="-49.50712203979492" startY="-5.60003662109375" />
+        <Line endX="-49.50712203979492" endY="36.0" layoutX="403.0" layoutY="462.0" startX="-49.50712203979492" startY="-5.60003662109375" />
+        <Label fx:id="lblShowID" layoutX="36.0" layoutY="481.0">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblShowName" layoutX="98.0" layoutY="479.0">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblShowAge" layoutX="198.0" layoutY="481.0">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblShowContatcNo" layoutX="267.0" layoutY="479.0">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblShowHotelId" layoutX="382.0" layoutY="479.0">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblGetReceiptionistID" layoutX="467.0" layoutY="108.0" text="3" visible="false" />
+        <ToggleButton fx:id="btnToggleShowPassword" layoutX="143.0" layoutY="348.0" mnemonicParsing="false" onAction="#btnToggleShowPasswordAction" prefHeight="18.0" prefWidth="44.0" text="Show">
+            <font>
+                <Font name="System Bold" size="10.0" />
+            </font>
+        </ToggleButton>
+        <Label fx:id="lblshowPassword" layoutX="201.0" layoutY="349.0" prefHeight="18.0" prefWidth="239.0">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Label>
+        <Button fx:id="btnClear" layoutX="458.0" layoutY="103.0" mnemonicParsing="false" onAction="#btnClearAction" text="Clear">
+            <font>
+                <Font name="System Bold" size="10.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>

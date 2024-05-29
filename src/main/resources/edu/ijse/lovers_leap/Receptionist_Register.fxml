@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="466.0" prefWidth="622.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.lovers_leap.fxmlController.ReceptionistsRegisterControllerFxml">
+    <children>
+        <Button id="btna" fx:id="btnSubmit" layoutX="180.0" layoutY="388.0" mnemonicParsing="false" onAction="#btnSubmitActionPerformed" prefHeight="21.0" prefWidth="302.0" style="-fx-background-color: #1D59A0;" stylesheets="@Style.css" text="Submit" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Button>
+        <AnchorPane prefHeight="54.0" prefWidth="622.0" style="-fx-background-color: #7CC8F5;">
+            <children>
+                <ImageView fitHeight="48.0" fitWidth="69.0" layoutX="131.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@images/register_Icon.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="200.0" layoutY="13.0" text="Receptionist Registrations">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <Label layoutX="67.0" layoutY="108.0" text="First Name">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="67.0" layoutY="142.0" text="Last Name">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="68.0" layoutY="250.0" text="Position">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="67.0" layoutY="285.0" text="Hotel ID">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="67.0" layoutY="320.0" text="Password">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtFirstName" layoutX="180.0" layoutY="106.0" onKeyPressed="#txtFirstNameKeyPress" prefHeight="26.0" prefWidth="302.0" promptText="Enter First Name" />
+        <TextField fx:id="txtLastName" layoutX="180.0" layoutY="139.0" onKeyPressed="#txtLastNameKeyPress" prefHeight="26.0" prefWidth="302.0" promptText="Enter Last Name" />
+        <ComboBox fx:id="cmbPosition" layoutX="181.0" layoutY="248.0" onKeyPressed="#cmbPositionKeyPress" prefHeight="26.0" prefWidth="302.0" promptText="Select Position" visibleRowCount="2" />
+        <ComboBox fx:id="cmbHotelId" layoutX="181.0" layoutY="282.0" onKeyPressed="#cmbHotelIdKeyPress" prefHeight="26.0" prefWidth="302.0" promptText="Select Hotel ID" />
+        <Label layoutX="68.0" layoutY="178.0" text="Age">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="68.0" layoutY="211.0" text="Contact No">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtAge" layoutX="181.0" layoutY="175.0" onKeyPressed="#txtAgeKeyPress" prefHeight="26.0" prefWidth="302.0" promptText="Enter Age" />
+        <TextField fx:id="txtContatcNo" layoutX="181.0" layoutY="208.0" onKeyPressed="#txtContatcNoKeyPress" prefHeight="26.0" prefWidth="302.0" promptText="Enter Contact No" />
+        <PasswordField fx:id="txtPassword" layoutX="181.0" layoutY="317.0" onKeyPressed="#txtPasswordKeyPress" prefHeight="26.0" prefWidth="302.0" promptText="Enter Password" />
+    </children>
+</AnchorPane>
